@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Museus do Mundo</h1>
+<p>Descubra um mundo de cultura, história e arte no Portal dos Museus. Aqui, você encontrará informações detalhadas sobre os museus mais fascinantes do Brasil e do mundo. Nosso objetivo é proporcionar a você uma experiência enriquecedora, conectando-o a instituições que preservam e celebram a herança cultural da humanidade.</p>
+<p>Explore exposições impressionantes, coleções valiosas e eventos culturais que trazem à vida histórias de diferentes épocas e lugares. Se você é um entusiasta da arte, um amante da história, ou simplesmente alguém curioso para aprender mais sobre o mundo ao seu redor, nosso portal é o seu ponto de partida ideal.</p>
+<p>Navegue por nossos guias de museus, leia artigos inspiradores, descubra dicas de visitas e fique por dentro das últimas novidades e eventos do universo dos museus. Quer você esteja planejando uma visita física ou explorando as possibilidades do turismo virtual, estamos aqui para tornar sua jornada cultural inesquecível.</p>
+
+<h1>Eventos do Mes</h1>
+
+<div *ngIf="fetchedData.length > 0">
+  <div *ngFor="let evento of fetchedData" class="evento">
+    <p class="nome">{{ evento.nome }}</p>
+    <p class="data">Data: {{ evento.data }}</p>
+    <p class="museu">Museu: {{ evento.museu }}</p>
+  </div>
+</div>
+<div *ngIf="fetchedData.length === 0">
+  <p>Carregando eventos...</p>
+</div>
+<button routerLink="/evento" class="vermais-bt">Ver mais</button>
+
+
+</body>
+</html>
+<app-footer></app-footer>

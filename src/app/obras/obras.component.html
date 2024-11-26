@@ -1,0 +1,27 @@
+<html>
+<body>
+    <div>
+        <label for="museu-select">Museu:</label>
+        <select id="museu-select" [(ngModel)]="selectedMuseu" (change)="filterData()">
+          <option value="">Todos</option>
+          <option *ngFor="let museu of museus" [value]="museu">{{ museu }}</option>
+        </select>
+      
+        <label for="autor-select">Autor:</label>
+        <select id="autor-select" [(ngModel)]="selectedAutor" (change)="filterData()">
+          <option value="">Todos</option>
+          <option *ngFor="let autor of autores" [value]="autor">{{ autor }}</option>
+        </select>
+      </div>
+      
+      <div>
+        <ul>
+          <li *ngFor="let obra of filteredData">
+            <strong>{{ obra.Nome }}</strong> - {{ obra.museu }} - {{ obra.autor }}
+          </li>
+        </ul>
+      </div>
+      
+</body>
+</html>
+<app-footer></app-footer>

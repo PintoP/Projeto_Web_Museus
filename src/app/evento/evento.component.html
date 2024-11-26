@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos</title>
+</head>
+<body>
+  <div id="app">
+    <div *ngIf="fetchedData.length > 0">
+        <h2>Eventos</h2>
+        <div *ngFor="let evento of fetchedData" class="evento">
+          <p>{{ evento.nome }}</p>
+          <p>Data: {{ evento.data }}</p>
+          <p>Museu: {{ evento.museu }}</p>
+        </div>
+      </div>
+    <div *ngIf="fetchedData.length === 0">
+      <p>Carregando eventos...</p>
+    </div>
+  </div>
+</body>
+</html>
+<app-footer></app-footer>

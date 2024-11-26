@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<button class="ticket-bt" (click)="openTicketLink()">Comprar bilhetes</button>
+<h1>{{ name }}</h1>
+<div class="descricao"><p>{{ descricao }}</p></div>
+
+<hr>
+<h2>Obras</h2>
+<div *ngFor="let obra of fetchedObras" class="obra-container">
+  <img class="imagem" [src]="obra.imagem"/>
+  <p>{{ obra.nome }} - {{ obra.autor }}</p>
+</div>
+
+<hr>
+
+<!--Eventos-->
+<h2>Eventos</h2>
+<div *ngIf="fetchedData.length > 0">
+  <div *ngFor="let evento of fetchedData" class="evento">
+    <p class="nome">{{ evento.nome }}</p>
+    <p class="data">Data: {{ evento.data }}</p>
+    <p class="museu">{{ evento.museu }}</p>
+  </div>
+</div>
+<div *ngIf="fetchedData.length === 0">
+  <p>Carregando eventos...</p>
+</div>
+
+<hr>
+
+<!--Localização-->
+<div class="loc">
+  <h2>Localização</h2>
+  <iframe [src]="localizacao" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<hr>
+<h2>Avaliação</h2>
+<form (submit)="submitRating(selectedRating, name)">
+  <p>Estrelas</p>
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="selectedRating"><label for="star5">&#9733;</label>
+    <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="selectedRating"><label for="star4">&#9733;</label>
+    <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="selectedRating"><label for="star3">&#9733;</label>
+    <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="selectedRating"><label for="star2">&#9733;</label>
+    <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="selectedRating"><label for="star1">&#9733;</label>
+  </div>
+  <button type="submit" class="submit-btn">Enviar</button>
+</form>
+
+<app-footer></app-footer>
+
+</body>
+</html>
+

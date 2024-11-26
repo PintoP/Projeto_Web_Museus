@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div *ngIf="showLogin" class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input type="email" name="email" [(ngModel)]="email" required>
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" [(ngModel)]="password" required>
+        <label>Password</label>
+      </div>
+      <button type="button" class="btn" (click)="login()">Login</button>
+      <p (click)="toggleForms()">Nao tem conta? Registar</p>
+    </form>
+  </div>
+
+  <div *ngIf="showRegister" class="registo-box">
+    <h2>Registar</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" name="username" [(ngModel)]="username" required>
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" [(ngModel)]="password" required>
+        <label>Password</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="email" [(ngModel)]="email" required>
+        <label>Email</label>
+      </div>
+      <button type="button" class="btn" (click)="register()">Registar</button>
+      <p (click)="toggleForms()">Ja tem conta? Login</p>
+    </form>
+  </div>
+
+  <div *ngIf="showUserDetails" class="form-container">
+    <h3>Informação pessoal</h3>
+    <input type="text" id="nome" name="nome" [(ngModel)]="userData.username" required readonly><br><br>
+    
+    <input type="email" id="email" name="email" [(ngModel)]="userData.email" required readonly><br><br>
+    
+    <input type="password" id="password" name="password" [(ngModel)]="userData.password" required readonly><br><br>
+    
+    <button type="button" class="btn" (click)="logout()">Logout</button>
+  </div>
+
+  <app-footer></app-footer>
+</body>
+</html>

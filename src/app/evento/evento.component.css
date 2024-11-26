@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    margin:10%;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+      background: #fff; /* Cor de fundo para fins de visualização */
+    }
+    .evento {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 1em;
+      }
+      
+      .evento p {
+        margin: 0;
+        padding: 0 0.5em;
+      }
+      
+      .evento .nome {
+        flex: 1;
+      }
+      
+      .evento .data {
+        flex: 1;
+        text-align: center;
+      }
+      
+      .evento .museu {
+        flex: 1;
+        text-align: right;
+      }

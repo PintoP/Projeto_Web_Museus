@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Museus</h1>
+  <div *ngFor="let museu of fetchedData">
+    <a [routerLink]="['/museu', museu.nome, museu.descricao, museu.localizacao, museu.imagem, museu.bilhetes]">
+      <div class="container">
+        <img class="imagem" [src]="museu.imagem"/>
+        <div class="borda">
+          <p>{{ museu.nome }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
+<app-footer></app-footer>
+

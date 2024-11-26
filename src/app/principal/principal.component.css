@@ -1,0 +1,42 @@
+body{
+    background-color: #fff;
+    margin: 10%;
+    
+}
+
+.evento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
+  
+  .evento p {
+    margin: 0;
+    padding: 0 0.5em;
+  }
+  
+  .evento .nome {
+    flex: 1;
+  }
+  
+  .evento .data {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .evento .museu {
+    flex: 1;
+    text-align: right;
+  }
+
+  .vermais-bt{
+    padding: 5px;
+    border-radius: 12px;
+    height: 7%;
+    width: 9%;
+    background-color: #f3f3f3;
+  }
